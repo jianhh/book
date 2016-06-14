@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+      http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+      http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+	  http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd "
+	default-autowire="byName" >
+
+	<!-- 上传拦截，如最大上传值及最小上传值 -->
+	<bean id="multipartResolver"
+		class="com.ithxh.baseCore.annotation.CustomMultipartResolver">
+		<property name="maxUploadSize">
+			<value>2147483648</value>  <!--10M 10245760  2G 2147483648-->  
+		</property>
+		<property name="maxInMemorySize">
+			<value>4096</value>
+		</property>
+	</bean>
+	
+	<!--注解说明 -->
+	<context:annotation-config />
+	
+	<mvc:annotation-driven/>
+	
+	<mvc:default-servlet-handler/>
+	
+	<!-- resources 注解 用来处理资源文件 org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping 
+		否则就是 defaultMappingHandlerMapping -->
+	<mvc:resources mapping="/resource/**" location="/resource/" />
+	
+	<!-- 自动扫描的包名 -->
+	<!-- 自动扫描controller包下的所有类，使其认为spring mvc的控制器 -->
+	<!-- 加载controller的时候,不加载service,因为此时事物并未生效,若此时加载了service,那么事物无法对service进行拦截 -->
+	<context:component-scan use-default-filters="false" base-package="com.ithxh.xhh.controller">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" /> 
+		<context:exclude-filter type="annotation"
+			expression="org.springframework.stereotype.Service" />
+	</context:component-scan>
+	
+	<!-- spring context配置文件 -->
+	<context:component-scan base-package="com.fengzhiyin.">
+		<context:exclude-filter type="regex"
+			expression=".*controller$" />
+	</context:component-scan>
+
+	<!-- 权限控制拦截器，同时解决编码问题 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<bean class="com.ithxh.xhh.interceptor.PowerInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
+	<!-- 自定义异常处理类，统一处理 -->
+	<bean id="exceptionResolver" class="com.ithxh.xhh.exception.BaseExceptionResolver"></bean>
+</beans>

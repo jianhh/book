@@ -1,0 +1,240 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>慕课网</title>
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta http-equiv="Cache-Control" content="no-transform ">
+<link rel="stylesheet" href="/resource/front/css/personal.css"
+	type="text/css">
+<script src="/resource/common/js/jquery-1.7.2.js"></script>
+<script src="/resource/common/js/layer/layer.js"></script>
+</head>
+<body>
+	<div id="main">
+
+		<div class="wcontainer set-space-cont clearfix">
+			<div class="setting-left l my-box-shadow" >
+				<ul class="wrap-boxes">
+					<li class="nav-active"><a href="javascript:;" class="onactive">个人资料</a></li>
+					<li><a href="javascript:;">头像设置</a></li>
+					<li><a href="javascript:;">邮箱验证</a></li>
+					<li><a href="javascript:;">修改密码</a></li>
+				</ul>
+			</div>
+			<div class="setting-right my-box-shadow" style="display:none;">
+				<div class="setting-right-wrap wrap-boxes settings">
+
+
+					<div id="setting-profile" class="setting-wrap setting-profile">
+						<form id="profile">
+							<div class="wlfg-wrap">
+								<label class="label-name" for="nick">昵称</label>
+								<div class="rlf-group">
+									<input type="text" name="username" id="nick" class="rlf-input rlf-input-nick"
+										value="qq_小灰灰_4" placeholder="请输入昵称.">
+									<p class="rlf-tip-wrap"></p>
+								</div>
+							</div>
+							<div class="wlfg-wrap">
+								<label class="label-name" for="phone">长号</label>
+								<div class="rlf-group">
+									<input type="text" class="rlf-input" name="phonenumber" id="phone"/>
+									<p class="rlf-tip-wrap"></p>
+								</div>
+							</div>
+							<div class="wlfg-wrap">
+								<label class="label-name" for="sphone">短号</label>
+								<div class="rlf-group">
+									<input type="text" class="rlf-input" name="shortphonenumber" id="sphone"/>
+									<p class="rlf-tip-wrap"></p>
+								</div>
+							</div>
+							<div class="wlfg-wrap">
+								<label class="label-name" for="school-select">学校</label>
+								<div class="rlf-group profile-address">
+									<select id="school-select">
+					
+									</select> 
+									<select id="college-select">
+									
+									</select>
+
+									<p class="rlf-tip-wrap"></p>
+								</div>
+							</div>
+							<div class="wlfg-wrap">
+								<label class="label-name">性别</label>
+								<div class="rlf-group rlf-radio-group">
+									<label><input type="radio" hidefocus="true" value="0"
+										name="sex">保密</label> <label><input type="radio"
+										hidefocus="true" value="1" checked="checked" name="sex">男</label>
+									<label><input type="radio" hidefocus="true" value="2"
+										name="sex">女</label>
+								</div>
+								<p class="rlf-tip-wrap"></p>
+							</div>
+
+							<div class="wlfg-wrap">
+								<div class="rlf-group">
+									<span id="profile-submit" hidefocus="true" aria-role="button"
+										class="rlf-btn-green btn-block profile-btn">保存</span>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<!-- 头像设置开始 -->
+			<div class="setting-right my-box-shadow">
+				<div class="setting-right-wrap wrap-boxes settings">
+
+					<div id="setting-avator"
+						class="setting-wrap setting-avator clearfix">
+						<div class="avator-img l">
+							<div>
+								<img
+									src="http://img.mukewang.com/user/56e6e7170001704301150114.jpg"
+									width="220" height="220">
+							</div>
+							<div>
+								<input type="button" hidefocus="true" value="换一换"
+									class="js-avator-try avator-try">
+							</div>
+						</div>
+						<div class="avator-btn-group">
+							<div id="avator-btns" class="avator-btn-inner">
+								<div class="avator-btn-snswrap">
+									<span class="l-sns-btn l-sns-qq" data-sns="qq"><i
+										class="icon-qq"></i>从 QQ 帐号同步头像</span>
+								</div>
+
+								<div class="avator-btn-wrap">
+									<form target="uploadtarget" action="postpic" method="post"
+										enctype="multipart/form-data">
+										<a href="javascript:void(0)" hidefocus="true"
+											class="avator-btn-fake">上传头像</a> <input type="file"
+											title="上传头像" name="fileField" id="upload" accept="image/*">
+										<input type="hidden" name="type" value="1">
+									</form>
+									<iframe src="about:blank" id="uploadtarget" name="uploadtarget"
+										frameborder="0" style="display:none;"></iframe>
+								</div>
+							</div>
+							<div class="avator-upload-wrap" style="display:none;">
+								<span hidefocus="true" id="avator-btn-save" aria-role="button"
+									class="rlf-btn-green btn-block">保存</span>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+
+			<!-- 头像设置结束-->
+
+			<div class="setting-right my-box-shadow" style="display:none;">
+				<div class="setting-right-wrap wrap-boxes settings">
+
+					<div class="setting-verify">
+						<h1>当前邮箱</h1>
+						<p>huihuanggungun@126.com</p>
+						<div class="verify-status verified-status">
+							<i class="verify-on-icon"></i>
+							<div>邮箱已验证</div>
+						</div>
+						<button data-mail="huihuanggungun@126.com"
+							class="js-resetemail rlf-btn-blue">更改邮箱</button>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- 修改密码开始 -->
+			<div class="setting-right my-box-shadow">
+				<div class="setting-right-wrap wrap-boxes settings">
+
+					<div class="pwd-reset-wrap setting-resetpwd">
+						<form method="post" id="resetpwdform">
+
+							<div class="wlfg-wrap">
+								<label class="label-name" for="">当前密码</label>
+								<div class="rlf-group">
+									<input type="password" name="oldpwd"
+										class="rlf-input rlf-input-pwd" placeholder="请输入当前密码">
+									<p class="rlf-tip-wrap"></p>
+								</div>
+							</div>
+							<div class="wlfg-wrap">
+								<label class="label-name" for="newpass">新密码</label>
+								<div class="rlf-group">
+									<input type="password" data-validate="password" name="newpass"
+										id="newpass" class="rlf-input rlf-input-pwd"
+										placeholder="请输入密码">
+									<p class="rlf-tip-wrap"></p>
+								</div>
+							</div>
+							<div class="wlfg-wrap">
+								<label class="label-name" for="confirm">确认密码</label>
+								<div class="rlf-group">
+									<input type="password" name="confirm" id="confirm"
+										class="rlf-input rlf-input-pwd" placeholder="请输入密码">
+									<p class="rlf-tip-wrap"></p>
+								</div>
+							</div>
+							<div class="wlfg-wrap">
+								<label class="label-name" for=""></label>
+								<div class="rlf-group">
+									<span id="resetpwd-btn-save" style="width: 360px;"
+										aria-role="button" class="rlf-btn-green btn-block">保存</span>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- 修改密码结束 -->
+
+		</div>
+	</div>
+
+
+	<div class="msg-layer in" style="display:none;">
+		<h3>身份验证</h3>
+		<p>
+			为保障用户身份安全，我们需要验证您的身份。<br>用户名：huihuanggungun@126.com
+		</p>
+		<input type="password" placeholder="请输入慕课网登录密码"> <a
+			href="javascript:void(0)" class="btn-submit">确定</a>
+		<button class="btn-close" type="button"></button>
+	</div>
+
+	<script>
+		$(function() {
+			var op = layer.open({
+				type : 1,
+				closeBtn : 1,
+				shadeClose : true, //开启遮罩关闭
+				content : $('.msg-layer')
+			});
+
+			$(".btn-close").click(function() {
+				layer.close(op);
+			});
+
+			$(".wrap-boxes li").click(function() {
+				$(".wrap-boxes li").removeClass("nav-active");
+				$(this).addClass("nav-active");
+				$(".setting-right").css("display","none");
+				$(".setting-right").eq($(this).index()).css("display","block");
+				
+			});
+			
+			$(".setting-right").css("display","none");
+			$(".setting-right").eq(0).css("display","block");
+
+		});
+	</script>
+</body>
+</html>

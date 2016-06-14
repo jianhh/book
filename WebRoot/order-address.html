@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./order-address.css" />
+  <script type="text/javascript" src="YUI.js"></script>
+  <script type="text/javascript" src="area_selector.js"></script>
+ </head>
+ <body>
+  <div class="form-box">
+
+	<div class="item item-postcode" id="J_ItemPostCode">
+		<span class="item-label tsl" data-phase-id="d_p_postCode">所在地区 </span>
+		<div class="item-warp">
+			<select name="sheng" title="省" id="pe"  onchange="doChange(this)"></select>
+			<select name="shi" title="市" id="city"></select>
+			<select name="qu" title="区" id="area"></select>
+			<input id="code" value="110000" type="hidden" name="code" />
+		</div>
+		
+		<div class="msg hide" id="J_MsgPostCode">
+			<div class="msg-cnt tsl"></div>
+		</div>
+	</div>
+
+	<div class="item item-street" id="J_ItemStreet">
+		<span class="item-label tsl" data-phase-id="d_p_addressDetail">详细地址 <i>*</i></span>
+
+		<div class="ks-combobox" id="J_ComboboxStreet" aria-pressed="false">
+			<div class="ks-combobox-input-wrap">
+				<textarea class="ks-combobox-input i-ta tsl" name="addressDetail" id="J_Street" placeholder="建议您如实填写详细收货地址，例如街道名称，门牌号码，楼层和房间号等信息"></textarea>
+			</div>
+		</div>
+		<div class="msg-box">
+			<div class="msg msg-error hide" id="J_MsgStreet">
+				<i></i>
+
+				<div class="msg-cnt"></div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="item item-postcode" id="J_ItemPostCode">
+		<span class="item-label tsl" data-phase-id="d_p_postCode">邮政编码 </span>
+		<div class="item-warp">
+		<input name="post" maxlength="16" placeholder="如您不清楚邮递区号，请填写000000"  class="i-text tsl" type="text" value="">
+		</div>
+		
+		<div class="msg hide" id="J_MsgPostCode">
+			<div class="msg-cnt tsl"></div>
+		</div>
+	</div>
+
+	<div class="item item-name" id="J_ItemName">
+		<span class="item-label tsl" data-phase-id="d_p_receiverName">收货人姓名 <i>*</i></span>
+		<div class="item-warp">
+		<input name="fullName" class="i-text tsl" type="text" placeholder="长度不超过25个字符" value="">
+		</div>
+		
+		<div class="msg hide" id="J_MsgName">
+			<i></i>
+
+			<div class="msg-cnt"></div>
+		</div>
+	</div>
+
+	<div class="item item-name" id="J_ItemName">
+		<span class="item-label tsl" data-phase-id="d_p_receiverName">手机号码 <i>*</i></span>
+		<div class="item-warp">
+		<input name="fullName" class="i-text tsl" type="text" placeholder="填写手机号码" value="">
+		</div>
+		
+		<div class="msg hide" id="J_MsgName">
+			<i></i>
+
+			<div class="msg-cnt"></div>
+		</div>
+	</div>
+
+
+  </div>
+
+  <script type="text/javascript">
+    (function() {
+        var Y = YAHOO.util;
+		//获取省ID
+        var provSel = Y.Dom.get("pe");
+		//获取市ID
+        var citySel = Y.Dom.get("city");
+		//获取区/县ID
+        var distSel = Y.Dom.get("area");
+		//获取当前初始化的区域代码
+        var codeInput = Y.Dom.get('code');
+		//取得全国省份信息
+        var cv = TB.form.DistrictSelector.attach(provSel, citySel, distSel);
+        cv.initSelectedCodes(codeInput.value);
+        var validate = function() {
+            if (provSel.options.length > 1 && provSel.selectedIndex == 0)
+                return false;
+            if (citySel.options.length > 1 && citySel.selectedIndex == 0)
+                return false;
+            if (distSel.options.length > 1 && distSel.selectedIndex == 0)
+                return false;
+            return true;
+        }
+        window['distSelector'] = cv;
+    })();	
+</script>
+ </body>
+</html>

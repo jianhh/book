@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>XhhBaseWeb</display-name>
+  
+  <!-- log4j 配置 -->
+  <context-param>
+    <param-name>log4jConfigLocation</param-name>
+    <param-value>classpath:log4j.properties</param-value>
+  </context-param>
+  <context-param>
+    <param-name>log4jRefreshInterval</param-name>
+    <param-value>6000</param-value>
+  </context-param>
+  <listener>
+    <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+  </listener>
+  
+  <!-- spring 配置 -->
+  <context-param>  
+   <param-name>contextConfigLocation</param-name>  
+   <param-value>
+        classpath:spring-freemarker.xml,
+    	classpath:spring.xml,
+    	classpath:spring-email.xml
+   </param-value>  
+  </context-param>  
+  <!-- 监听器 -->  
+  <listener>  
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>  
+  </listener> 
+  
+  <listener>
+    <description>Introspector缓冲泄露监听器</description>
+    <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+  </listener>
+  <listener>
+    <description>request监听器</description>
+    <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+  </listener>
+ <!--  <servlet>
+    <servlet-name>RandCodeImage</servlet-name>
+    <servlet-class>com.tengo.edu.servlet.RandCodeImageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RandCodeImage</servlet-name>
+    <url-pattern>/randCodeImage</url-pattern>
+  </servlet-mapping> -->
+  <!-- springmvc 配置 -->
+  <servlet>  
+    <servlet-name>springMVC</servlet-name>  
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>  
+    <!-- 加载springMVC的配置文件 -->  
+    <init-param>  
+        <param-name>contextConfigLocation</param-name>  
+        <param-value>classpath:spring-mvc.xml</param-value>  
+    </init-param>  
+    <load-on-startup>1</load-on-startup>  
+  </servlet>  
+  <servlet-mapping>  
+    <servlet-name>springMVC</servlet-name>  
+    <url-pattern>/</url-pattern>  
+  </servlet-mapping>  
+  <!-- Druid 配置 -->
+  <servlet>
+      <servlet-name>DruidStatView</servlet-name>
+      <servlet-class>com.alibaba.druid.support.http.StatViewServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+      <servlet-name>DruidStatView</servlet-name>
+      <url-pattern>/druid/*</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>DruidWebStatFilter</filter-name>
+    <filter-class>com.alibaba.druid.support.http.WebStatFilter</filter-class>
+    <init-param>
+      <param-name>exclusions</param-name>
+      <param-value>*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>DruidWebStatFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <!-- 编码 配置 -->
+  <filter>
+    <filter-name>encodingFilter</filter-name>
+    <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>encodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>/index.jsp</welcome-file>
+  </welcome-file-list>
+  <!-- 错误页面配置 -->
+  <error-page>
+    <error-code>404</error-code>
+    <location>/error.html</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/error.html</location>
+  </error-page>
+  <!-- ckfinder 配置 -->
+  <servlet>
+    <servlet-name>ConnectorServlet</servlet-name>
+    <servlet-class>com.ckfinder.connector.ConnectorServlet</servlet-class>
+    <init-param>
+      <param-name>XMLConfig</param-name>
+      <param-value>classpath:CKfinderConfig.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>false</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ConnectorServlet</servlet-name>
+    <url-pattern>  
+            /ckfinder/core/connector/java/connector.java  
+        </url-pattern>
+  </servlet-mapping>
+  
+  <!-- kaptcha验证码配置 -->
+     <servlet>
+         <!-- 生成图片的Servlet -->
+         <servlet-name>Kaptcha</servlet-name>
+         <servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
+       
+         <!-- 是否有边框-->
+         <init-param>
+             <param-name>kaptcha.border</param-name>
+             <param-value>no</param-value>
+         </init-param>    
+         <!-- 字体颜色 -->
+         <init-param>
+             <param-name>kaptcha.textproducer.font.color</param-name>
+             <param-value>red</param-value>
+         </init-param>
+         <!-- 图片宽度 -->
+         <init-param>
+             <param-name>kaptcha.image.width</param-name>
+             <param-value>135</param-value>
+         </init-param>
+         <!-- 使用哪些字符生成验证码 -->
+         <init-param>
+             <param-name>kaptcha.textproducer.char.string</param-name>
+             <param-value>ACDEFHKPRSTWX345679</param-value>
+         </init-param>
+         <!-- 图片高度 -->
+         <init-param>
+             <param-name>kaptcha.image.height</param-name>
+             <param-value>50</param-value>
+         </init-param>
+         <!-- 字体大小 -->
+         <init-param>
+             <param-name>kaptcha.textproducer.font.size</param-name>
+             <param-value>43</param-value>
+         </init-param>
+         <!-- 干扰线的颜色 -->
+         <init-param>
+             <param-name>kaptcha.noise.color</param-name>
+             <param-value>black</param-value>
+         </init-param>
+         <!-- 字符个数 -->
+         <init-param>
+             <param-name>kaptcha.textproducer.char.length</param-name>
+             <param-value>4</param-value>
+         </init-param>
+         <!-- 使用哪些字体 -->
+         <init-param>
+             <param-name>kaptcha.textproducer.font.names</param-name>
+             <param-value>Arial</param-value>
+         </init-param>        
+     </servlet>
+<!--   <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>FileUploadServlet</servlet-name>
+    <servlet-class>com.ithxh.xhh.controller.pub.FileUploadServlet</servlet-class>
+  </servlet> -->
+
+     <!-- 映射的url -->
+     <servlet-mapping>
+         <servlet-name>Kaptcha</servlet-name>
+         <url-pattern>/Kaptcha.jpg</url-pattern>
+     </servlet-mapping>
+<!--   <servlet-mapping>
+    <servlet-name>FileUploadServlet</servlet-name>
+    <url-pattern>/fileUpload/doPicUpload</url-pattern>
+  </servlet-mapping> -->
+</web-app>

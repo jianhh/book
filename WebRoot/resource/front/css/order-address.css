@@ -1,0 +1,210 @@
+body{
+	font-family: Avenir,tahoma,arial,FZLTXHK,'microsoft yahei',Simsun;
+	font: 14px/1.5 "Microsoft Yahei", "Hiragino Sans GB", Helvetica, "Helvetica Neue", Tahoma, Arial, sans-serif;
+}
+.form-box{
+padding-left:60px;
+margin-top:20px;
+}
+
+.form-box .item {
+position: relative;
+padding-left: 105px;
+padding-bottom: 10px;
+zoom: 1;
+text-align: left;
+z-index: 100;
+}
+.form-box .item-label {
+display: inline;
+float: left;
+width: 100px;
+margin-left: -105px;
+text-align: right;
+height: 26px;
+line-height: 26px;
+}
+.form-box .item-warp {
+position: relative;
+display: inline-block;
+_zoom: 1;
+}
+.form-box .i-text {
+border: 1px solid #afafaf;
+padding: 3px;
+width: 300px;
+height: 24px;
+vertical-align: middle;
+}
+.msg {
+padding: 4px 4px 4px 8px;
+font-size: 12px;
+line-height: 16px;
+color: #404040;
+background-color: #FFFFE5;
+border: 1px solid #FFCC7F;
+overflow: hidden;
+zoom: 1;
+display: inline-block;
+zoom: 1;
+}
+.hide {
+display: none;
+}
+.form-box select, .form-box .item-phone select {
+width: 100px;
+background-color: #fff;
+background-image: none;
+border: 1px solid #ccc;
+outline: 0;
+cursor: pointer;
+height: 30px;
+}
+.ks-combobox {
+display: inline-block;
+overflow: hidden;
+zoom: 1;
+}
+.ks-combobox-input-wrap {
+overflow: hidden;
+vertical-align: middle;
+position: relative;
+}
+.form-box .i-ta {
+display: block;
+margin: 0;
+padding: 3px;
+width: 300px;
+height: 62px;
+border: 1px solid #afafaf;
+font-size: 12px;
+}
+textarea {
+overflow: auto;
+vertical-align: top;
+}
+.form-box .item-label i {
+color: red;
+font-style: normal;
+}
+
+.btn {
+display: inline-block;
+zoom: 1;
+height: 28px;
+line-height: 28px;
+padding: 0 20px;
+color: #FFF;
+font-weight: 700;
+font-size: 14px;
+text-align: center;
+background: #ff4001;
+border: 0;
+border-radius: 3px;
+cursor: pointer;
+}
+.btn:hover{
+	background: #F32C02;
+}
+.rlf-input {
+  width: 200px;
+  border: 1px solid #ccc;
+  width: 260px;
+  line-height: 24px;
+  padding: 7px 7px 7px 48px;
+  font-size: 14px;
+  background: #ffffff url(/resource/front/images/rl-sprite.png) no-repeat -80px -678px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  transition: border-color 0.2s;
+  -webkit-transition: border-color 0.2s;
+  -moz-transition: border-color 0.2s;
+  -o-transition: border-color 0.2s;
+  transition: padding 0.15s;
+  -webkit-transition: padding 0.15s;
+  -moz-transition: padding 0.15s;
+  -o-transition: padding 0.15s;
+  border-color: #d0d6d9;
+}
+.rlf-input:-moz-placeholder {
+  color: #d0d6d9;
+}
+.rlf-input::-moz-placeholder {
+  color: #d0d6d9;
+}
+.rlf-input:-ms-input-placeholder {
+  color: #d0d6d9;
+}
+.rlf-input::-webkit-input-placeholder {
+  color: #d0d6d9;
+}
+.rlf-input.placeholder {
+  color: #d0d6d9;
+}
+.rlf-input:focus {
+  border-color: #7bd089;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c6ebcc;
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c6ebcc;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #c6ebcc;
+}
+.rlf-field-error {
+  border-color: #f01400;
+}
+.rlf-field-error:focus {
+  border-color: #f01400;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #da838d;
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #da838d;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #da838d;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  padding-left: 15px;
+  padding-right: 40px;
+}
+.rlf-input-email {
+  background-position: -80px -678px;
+}
+.rlf-input-pwd {
+  background-position: -80px -774px;
+}
+.rlf-input-nick {
+  background-position: -80px -726px;
+}
+
+.rlf-verify-group .rlf-input{
+	background: #fff;
+	padding-left: 7px;
+	width: 120px;
+	vertical-align: top;
+}
+.rlf-verify-group img{
+	height: 38px;
+	width: 70px;
+	margin:0 10px;
+	vertical-align: top;
+	display: inline-block;
+}
+.rlf-verify-group span{
+	display: inline-block;
+	color: #39b94e;
+	cursor: pointer;
+	height: 40px;
+	vertical-align: top;
+	line-height: 150%;
+	margin-top: -4px;
+}
+.rlf-tip-wrap{
+	font-size: 12px;
+	height: 30px;
+	line-height: 30px;
+}
+.rlf-tip-error{
+	/* background: url(../../../images/rl-sprite.png) no-repeat -108px -934px;
+	padding-left: 15px; */
+	color: #f01400;
+}
+
+.rlf-btn-gray{
+
+}

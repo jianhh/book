@@ -1,0 +1,151 @@
+@charset "utf-8";
+/*!
+ * @名称：base.css
+ * @功能：1、重设浏览器默认样式
+ *       2、设置通用原子类
+ */
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+    background:#ffffff;
+    color:#666;
+}
+body{
+    font: 14px/24px "Microsoft YaHei","Arial",sans-serif;
+    background:#E9EAEB;
+    color: #222222;
+}
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+    margin:0;
+    padding:0;
+}
+li {list-style: none;}
+/* 要注意表单元素并不继承父级 font 的问题 */
+button,input,select,textarea {
+    font:12px \5b8b\4f53,arial,sans-serif;
+}
+input,select,textarea {
+    font-size:100%;
+}
+/* 去掉 table cell 的边距并让其边重合 */
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+/* ie bug：th 不继承 text-align */
+th {
+    text-align:inherit;
+}
+/* 去除默认边框 */
+fieldset,img {
+    border:none;
+}
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe {
+    display:block;
+}
+/* 去掉 firefox 下此元素的边框 */
+abbr,acronym {
+    border:none;
+    font-variant:normal;
+}
+/* 一致的 del 样式 */
+del {
+    text-decoration:line-through;
+}
+address,caption,cite,code,dfn,em,th,var {
+    font-style:normal;
+    font-weight:500;
+}
+/* 去掉列表前的标识，li 会继承 */
+ol,ul {
+    list-style:none;
+}
+/* 对齐是排版最重要的因素，别让什么都居中 */
+caption,th {
+    text-align:left;
+}
+/* 来自yahoo，让标题都自定义，适应多个系统应用 */
+h1,h2,h3,h4,h5,h6 {
+    font-size:100%;
+    font-weight:500;
+}
+q:before,q:after {
+    content:'';
+}
+/* 统一上标和下标 */
+sub,sup {
+    font-size:75%;
+    line-height:0;
+    position:relative;
+    vertical-align:baseline;
+}
+sup {
+    top:-0.5em;
+}
+sub {
+    bottom:-0.25em;
+}
+/* 让链接在 hover 状态下显示下划线 */
+a:hover {
+    text-decoration:underline;
+}
+/* 默认不显示下划线，保持页面简洁 */
+ins,a {
+    text-decoration:none;
+}
+a {
+	color: #666;
+}
+/* 去除 ie6 & ie7 焦点点状线 */
+a:focus,*:focus {
+    outline:none;
+}
+/* 清除浮动 */
+.clearfix:before,.clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after {
+    clear:both;
+    overflow:hidden;
+}
+.clearfix {
+    zoom:1; /* for ie6 & ie7 */
+}
+.clear {
+    clear:both;
+    display:block;
+    font-size:0;
+    height:0;
+    line-height:0;
+    overflow:hidden;
+}
+/* 设置显示和隐藏，通常用来与 js 配合 */
+.hide {
+    display:none;
+}
+.block {
+    display:block;
+}
+/* 设置浮动，减少浮动带来的 bug */
+.fl,.fr {
+    display:inline;
+}
+.fl {
+    float:left;
+}
+.fr {
+    float:right;
+}
+.oh {
+	overflow: hidden;
+}
+/* 设置对齐 */
+.tc {text-align: center;}
+.tr {text-align: right;}
+.tl {text-align: left;}
+.size1of2 {
+width: 50%;
+}
+.verifycode img{height:37px;vertical-align:middle}.verifycode a{margin-left:3px}.verifycode .frm_input_box{display:inline-block;width:108px}.verifycode .frm_control_group{padding:.5em 0}.frm_controls .verifycode{padding:0}.verifycode img{height:53px}.verify_msg{clear:both;font-size:0}.verify_msg i{font-size:14px;font-weight:400;font-style:normal;margin-right:5px}.verify_msg.fail{color:#e96262}.verify_img_wrp{margin-top:20px}.verify_msg_content{font-size:14px}.processor{background-color:#f9f9f9;padding:15px 150px 26px;overflow:hidden;*height:100px}.processor ol{position:relative;*zoom:1}.processor ol:after{content:"\200B";display:block;height:0;clear:both}.processor li{float:left;text-align:center;*margin-top:40px}.processor li.no_extra{overflow:visible;display:table-cell;vertical-align:top;float:none;width:auto;*display:block;*zoom:1}.processor li.no_extra:after{content:" . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";visibility:hidden;clear:both;height:0!important;display:block;line-height:0}.processor li.last{position:absolute;left:100%;top:0}.processor li.last .step_line{width:0}.processor li.current .icon_step{background:url("/resource/front/images/processor_z2168b9.png") 0 0 no-repeat}.processor li.current .step_line{background-color:#c2c3c4}.processor li.prev .icon_step,.processor li.complete .icon_step{background:url("/resource/front/images/processor_z2168b9.png") 0 -50px no-repeat;font-size:0}.processor li.prev .step_line{background-color:#3eb74f}.processor .step_line{height:3px;margin-bottom:-26px;background-color:#c2c3c4;width:80%;display:inline-block}.processor .step_inner{width:105px;margin-left:-54px;text-align:center;color:#9e9f9f;*float:left}.processor .icon_step{text-align:center;font-style:normal;font-size:18px;line-height:41px;text-indent:1px;background:url("/resource/front/images/processor_z2168b9.png") 0 -100px no-repeat;width:40px;height:40px;vertical-align:middle;display:inline-block;color:#fff}.processor h4{font-weight:400;font-style:normal;padding-top:5px;font-size:14px}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<list>
+	<smartUpload name="default">
+	    <maxFileSize>1024*1024*10</maxFileSize>
+		<totalMaxFileSize>1024*1024*20</totalMaxFileSize>
+		<allowedFilesList>doc,txt,bat</allowedFilesList>
+		<deniedFilesList>exe,bat,min</deniedFilesList>
+		<permanentDir>/xhh/book/official</permanentDir>
+		<templateDir>/xhh/book/temp</templateDir>
+		<picDir>/pic</picDir>
+		<videoDir>/video</videoDir>
+		<resourceDir>/resource</resourceDir>
+		<otherDir>/other</otherDir>
+	</smartUpload>
+	<smartUpload name="pic">
+	    <maxFileSize>1024*1024*10</maxFileSize>
+		<totalMaxFileSize>1024*1024*20</totalMaxFileSize>
+		<allowedFilesList>jpg,jpeg,png,gif,bmp</allowedFilesList>
+		<deniedFilesList>exe,bat,min</deniedFilesList>
+		<permanentDir>/xhh/book/official</permanentDir>
+		<templateDir>/xhh/book/temp</templateDir>
+		<picDir>/pic</picDir>
+		<videoDir>/video</videoDir>
+		<resourceDir>/resource</resourceDir>
+		<otherDir>/other</otherDir>
+	</smartUpload>
+	<smartUpload name="video">
+	    <maxFileSize>1024*1024*10</maxFileSize>
+		<totalMaxFileSize>1024*1024*20</totalMaxFileSize>
+		<allowedFilesList>mp4,flv,avi</allowedFilesList>
+		<deniedFilesList>exe,bat,min</deniedFilesList>
+		<permanentDir>/xhh/book/official/</permanentDir>
+		<templateDir>/xhh/book/temp/</templateDir>
+		<picDir>/pic</picDir>
+		<videoDir>/video</videoDir>
+		<resourceDir>/resource</resourceDir>
+		<otherDir>/other</otherDir>
+	</smartUpload>
+	<smartUpload name="document">
+	    <maxFileSize>1024*1024*10</maxFileSize>
+		<totalMaxFileSize>1024*1024*20</totalMaxFileSize>
+		<allowedFilesList>doc,txt</allowedFilesList>
+		<deniedFilesList>exe,bat,min</deniedFilesList>
+		<permanentDir>/xhh/book/official/</permanentDir>
+		<templateDir>/xhh/book/temp/</templateDir>
+		<picDir>/pic</picDir>
+		<videoDir>/video</videoDir>
+		<resourceDir>/resource</resourceDir>
+		<otherDir>/other</otherDir>
+	</smartUpload>
+</list>

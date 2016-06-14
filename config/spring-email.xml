@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:jee="http://www.springframework.org/schema/jee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+      http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+      http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+      http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+	  http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.0.xsd
+      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	<!-- 配置spring的javamail -->
+	<bean id="mailSender"
+		class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<!-- smtp地址 -->
+		<property name="host" value="smtp.sohu.com" />
+		<!-- 邮件发送地址 -->
+		<property name="username" value="ppag5556b2ffa87b@sohu.com" />
+		<!-- 发送密码 -->
+		<property name="password" value="ajie1991123ok.." />
+		<!-- 发送时使用的字符集 -->
+		<property name="defaultEncoding" value="UTF-8"></property>
+		<!-- javaMail相关参数设置 -->
+		<property name="javaMailProperties">
+			<props><!-- 是否需要auth认证 -->
+				<prop key="mail.smtp.auth">true</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- 配置邮件模板相关信息 -->
+	<bean id="velocityEngine"
+		class="org.springframework.ui.velocity.VelocityEngineFactoryBean">
+		<property name="velocityProperties">
+			<value>
+				resource.loader=class
+				class.resource.loader.class=org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+			</value>
+		</property>
+	</bean>
+
+	<!-- 定义线程池  让系统异步执行任务-->
+	<bean id="taskExecutor" name="taskExecutor"
+		class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		<property name="corePoolSize" value="10" /> <!-- 线程池维护线程的最少数量 -->  
+		<property name="maxPoolSize" value="1000" />  <!-- 线程池维护线程的最大数量 --> 
+		<property name="keepAliveSeconds" value="30000" />   <!-- 线程池维护线程所允许的空闲时间 -->
+		<property name="queueCapacity" value="200" />  <!-- 线程池所使用的缓冲队列 -->
+	</bean>
+</beans>

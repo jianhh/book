@@ -1,0 +1,60 @@
+/* CSS Document */
+* {
+	font-family: "Microsoft YaHei" !important;
+}
+
+body {
+	padding: 0px;
+	margin: 0px;
+	font-family: "Microsoft YaHei" ! important;
+}
+
+body.news_body,body.list_body {
+	min-width: 1500px;
+	overflow-x: auto;
+}
+
+div {
+	padding: 0px;
+	margin: 0px;
+	font-family: "Microsoft YaHei" ! important;
+}
+
+div,p,img,ul,li,form,input,label,span,dl,dt,dd,h1,h2,h3,h4,h5,h6 {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	blr: expression(this.onFocus = this.blur () );
+}
+/*for IE*/
+a {
+	outline: none;
+}
+/*for Firefox*/
+A:link {
+	text-decoration: none;
+}
+
+A:visited {
+	text-decoration: none;
+}
+
+A:hover {
+	text-decoration: underline;
+	color: #cc0000;
+}
+
+img {
+	border: 0 none;
+}
+
+ol,ul,li {
+	list-style-type: none;
+}
+
+.icons {
+	background: url(../images/public/icons.png) no-repeat;
+	display: block;
+}

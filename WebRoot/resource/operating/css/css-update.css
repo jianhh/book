@@ -1,0 +1,248 @@
+@charset "utf-8";
+/*  本css文件属于特殊样式控制增加的。 */
+
+/*  首页 区（县）教育机构css开始 */
+.edu-alink {
+	padding: 0px 10px;
+	line-height: 24px;
+}
+
+.edu-alink li {
+	float: left;
+	padding: 0px 12px 0px 0px;
+	height: 24px;
+	color: #999;
+	list-style: none
+}
+
+.edu-alink a {
+	color: #999;
+	text-decoration: underline
+}
+
+.edu-alink a:hover {
+	color: #f00;
+}
+
+/*  首页 区（县）教育机构css结束 */
+
+/*  搜索框input   star*/
+input.nav-search-input {
+	border-color: #6fb3e0;
+	border-radius: 4px !important;
+}
+
+/*  搜索框input end  */
+
+/*  机构分页   */
+.pagination ul>li {
+	float: left !important;
+}
+
+/*  编辑页面的table、input、select */
+.editor-form table {
+	margin: 0px auto;
+}
+
+select,textarea,input[type="text"],input[type="password"],input[type="datetime"],input[type="datetime-local"],input[type="date"],input[type="month"],input[type="time"],input[type="week"],input[type="number"],input[type="email"],input[type="url"],input[type="search"],input[type="tel"],input[type="color"],.uneditable-input
+	{
+	margin-bottom: 0px !important;
+}
+
+.chzn-container-single .chzn-single {
+	border: 1px #D5D5D5 solid !important;
+	height: 24px !important;
+}
+
+.info td {
+	height: 30px;
+	width: auto;
+	/*padding:0px 20px 0px 0px;*/
+	vertical-align: middle;
+}
+
+.td-widthAuto td {
+	height: 30px;
+	width: 272px;
+}
+
+.info input[class*="span"] {
+	display: inline-block;
+	/*width: 129px;*/
+	width: 115px;
+}
+
+.info td input {
+	width: 115px;
+	font-size: 12px;
+	height: 16px;
+}
+
+.edu-address td input {
+	width: 354px;
+	font-size: 12px;
+	height: 16px;
+}
+
+.input-width464 td input {
+	width: 464px;
+	font-size: 12px;
+	height: 16px;
+}
+
+.input-width444 td input {
+	width: 444px;
+	font-size: 12px;
+	height: 16px;
+}
+
+.message td textarea {
+	width: 444px;
+	font-size: 12px;
+	margin-top: 2px;
+}
+
+.message464 td textarea {
+	width: 464px;
+	font-size: 12px;
+	margin-top: 2px;
+}
+
+.info td input[type="radio"] {
+	width: 20px !important;
+	vertical-align: middle;
+	height: 20px;
+}
+
+.info td select {
+	width: 129px;
+	font-size: 12px;
+	height: 16px;
+}
+
+.info td select.select-width228 {
+	width: 228px;
+	font-size: 12px;
+	height: 16px;
+}
+
+select.select-width150 {
+	width: 150px;
+	font-size: 12px;
+	height: 16px;
+}
+
+tr.tr-paddingLeft10 td {
+	padding: 0px 10px 0px 0px;
+}
+
+.page-content {
+	padding: 8px 20px 6px !important;
+}
+
+/*  启用/未启用中文化   */
+input.ace-switch[type="checkbox"]+.lbl::before {
+	font-weight: normal;
+	content: "启用\a0\a0\a0\a0未启用";
+	width: 60px;
+	background: #ffb752;
+}
+
+input.ace-switch[type="checkbox"]+.lbl::before {
+	
+}
+
+input.ace-switch[type="checkbox"]:checked+.lbl::after {
+	left: 40px;
+}
+
+/*   单选按钮的span css    开始 */
+.span-title {
+	font-size: 12px;
+	float: left;
+	width: 110px;
+	text-align: right;
+	line-height: 24px;
+}
+
+.span-title2 {
+	font-size: 12px;
+	float: left;
+	width: 190px;
+	text-align: right;
+	line-height: 24px;
+}
+/*   单选按钮的span css    结束 */
+.page-header h1 small {
+	diaplay: inline-block;
+}
+
+/* 资产类型搜索ul */
+.search_result_list {
+	position: absolute;
+	background: #fff;
+	border: 1px solid #6FB3E0;
+	border-top: 0px;
+	width: 230px;
+	border-radius: 4px !important;
+	top: 89px;
+	z-index: 999;
+}
+/*
+.search_result_list:focus{
+	border-color: #F59942;
+}
+*/
+.search_result_list ul {
+	padding: 0;
+	margin: 0;
+}
+
+.search_result_list li {
+	list-style: none;
+	cursor: pointer;
+	height: 24px;
+	line-height: 24px;
+	padding: 5px 10px;
+	margin: 5px 0px;
+}
+
+.search_result_list li:hover {
+	background: #6FB3E0;
+	color: #fff;
+}
+
+.result-li-hover {
+	background: #6FB3E0;
+	color: #fff;
+}
+
+/*  操作>>>字体按钮  */
+.btn-group a.btn-small {
+	padding: 0 5px;
+	line-height: 20px;
+}
+
+/* 取消下来列表的搜索字体图标  */
+.chzn-container-single-nosearch .chzn-search:after {
+	display: none;
+}
+
+
+/* table td 文字居中 及 caption属性设置  */
+
+table.center  td{
+	text-align:center !important;
+}
+table.center  th{
+	text-align:center !important;
+	background: transparent linear-gradient(to bottom, #F8F8F8 0px, #ECECEC 100%) repeat scroll 0% 0%;
+}
+table caption{
+	font-size:14px;
+	font-weight:bold;
+	padding:5px 0px;
+}
+
+
+

@@ -1,0 +1,17 @@
+@CHARSET "UTF-8";
+.clearfix:after{content:'\0020';display:block;height:0;clear:both;visibility:hidden; }
+.clearfix{*zoom:1;}
+.rm-face-reault {
+display: inline-block;
+height: 20px;
+padding: 1px 10px;
+margin-left: 10px;
+vertical-align: bottom;
+font-size: 12px;
+cursor: pointer;
+border-radius: 2px;
+}
+.rm-face-reault:hover {
+padding: 0 9px;
+border: 1px solid #aaa;
+}

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<base> 
+	<description>系统配置文件</description>  
+ 	<sysConfig>
+		<sysBasePath>http://127.0.0.1:8080/</sysBasePath>
+		<openQiniuUpload>false</openQiniuUpload>
+		<qiniuUrl>http://7xs7s6.com1.z0.glb.clouddn.com/</qiniuUrl>
+	</sysConfig>
+</base>
+ 
+ 

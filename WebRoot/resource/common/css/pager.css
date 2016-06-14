@@ -1,0 +1,113 @@
+#pager_div {
+	float: right;
+}
+
+#pager_div li {
+	float: left;
+}
+
+#pager_div #pager_num {
+	font-size: 14px;
+	line-height: 24px;
+}
+
+.pagerBar { /*height: 30px;*/
+	backgound: #ffffff;
+	padding: 0px 5px 0px 0px;
+}
+
+.pager-ul li {
+	padding: 0px 3px;
+}
+
+#pager ul.pages {
+	display: block;
+	float: right;
+	margin: 3px;
+	text-transform: uppercase;
+	font-size: 12px;
+	border: none;
+}
+
+.pagerBar label {
+	margin-top: 5px;
+	font-size: 14px;
+}
+
+.pagerBar select {
+	margin-top: 5px;
+}
+
+#pager ul.pages li {
+	list-style: none;
+	float: left;
+	padding: 2px 5px;
+	margin: 0px 5px 0px 0px;
+	cursor: pointer;
+	text-decoration: none;
+	border: 1px solid #E0E8EB;
+	color: #2283C5;
+	background-color: #FAFAFA;
+}
+
+#pager ul.pages li:hover {
+	border: 1px solid #E0E8EB;
+}
+
+#pager ul.pages li.pgEmpty {
+	color: #cfcfcf;
+	padding: 2px 5px;
+	cursor: default;
+	border: 1px solid #E0E8EB;
+}
+
+#pager ul.pages li.pgCurrent {
+	color: #2283C5;
+	font-weight: 700;
+	border: 1px solid #003f7e;
+	background-color: #E0E8EB;
+}
+
+/** �޸� 2015.1.7 **/
+.pager ul.pages {
+	display: block;
+	float: right;
+	margin: 0 3px;
+	text-transform: uppercase;
+	font-size: 12px;
+	border: none;
+}
+
+.pager ul.pages li {
+	list-style: none;
+	float: left;
+	padding: 4px 8px;
+	margin: 0px 5px 0px 0px;
+	cursor: pointer;
+	text-decoration: none;
+	border: 1px solid #E0E8EB;
+	color: #2283C5;
+}
+
+.pager ul.pages li:hover {
+	border: 1px solid #E0E8EB;
+	background: #eaeff2;
+}
+
+.pager ul.pages li.pgEmpty {
+	color: #2283C5;
+	padding: 4px 8px;
+	cursor: default;
+	border: 1px solid #E0E8EB;
+}
+
+.pager ul.pages li.pgCurrent {
+	color: #2283C5;
+	font-weight: 700;
+	border: 1px solid #E0E8EB;
+	background-color: #FAFAFA;
+}
+
+.pager ul.pages li.pgCurrent:hover {
+	background: #eaeff2;
+}

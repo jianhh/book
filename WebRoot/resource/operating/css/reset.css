@@ -1,0 +1,41 @@
+@charset "utf-8";
+/**
+ * 重置部分标签，重写部分类css
+ *
+ * Copyright 2015, Small Fat
+ *
+ */
+
+html{font-size: 12px;font-family: "Microsoft YaHei";color: #676767;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,select,p,blockquote,th,td{margin:0;padding:0;}
+input,select{color: #676767;outline: none;}
+table{border-collapse:collapse;border-spacing:0}
+fieldset,img{border:0}
+textarea{resize: none;color: #676767;outline: none;/*padding: 5px 8px;*/}
+/*address,button,caption,cite,code,dfn,em,input,optgroup,option,select,strong,textarea,th,var{font:inherit}*/
+del,ins{text-decoration:none}
+li{list-style:none}
+caption,th{text-align:left}
+/*h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}*/
+q:before,q:after{content:''}
+abbr,acronym{border:0;font-variant:normal}
+sup{vertical-align:baseline}
+sub{vertical-align:baseline}
+legend{color:#000}
+
+a{color: #676767;text-decoration: none;}
+a:hover{color: #f00;}
+.lt{float: left;}
+.rt{float: right;}
+.mar-top30{margin-top: 30px;}
+.mar-top20{margin-top: 20px;}
+.mar-top11{margin-top: 11px;}
+.mar-right27{margin-right: 27px;}
+.mar-right26{margin-right: 26px;}
+.mar-right17{margin-right: 17px;}
+.mar-right0{margin-right: 0 !important;}
+.width100{width: 100px !important;}
+.show{display: block !important;}
+.hide{display: none !important;}
+.color-tab{color: #00a1e6;}
+.clearfix:after{content: ".";height: 0;line-height: 0;display: block;clear: both;visibility: hidden;}
